@@ -16,7 +16,7 @@ python main.py -V '1' -n '1' -d '1' -tr 'training-tweets.txt' -te 'test-tweets-g
 ```
 OR 
 ```
-# python main.py -V '1' -n '1' -d '1' -tr 'training-tweets.txt' -te 'test-tweets-given.txt' -b 
+python main.py -V '1' -n '1' -d '1' -tr 'training-tweets.txt' -te 'test-tweets-given.txt' -b 
 ```
 
 Where:
