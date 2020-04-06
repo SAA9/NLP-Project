@@ -18,12 +18,17 @@ OR
 ```
 # python main.py -V '1' -n '1' -d '1' -tr 'training-tweets.txt' -te 'test-tweets-given.txt' -b 
 ```
-where:
-V = 0, 1 or 2,
-n = 1, 2, 3
-d = btween 0 and 1 inclusively
-tr = training text path
-te = testing text path
-b = optional, to run the BYOM (Build Your Own Model)
 
-Where file path is the path of the input file. 
+Where:
+
+V = 0, 1 or 2
+
+n = 1, 2, 3
+
+d = btween 0 and 1 inclusively
+
+tr = training text path
+
+te = testing text path
+
+b = optional, to run the BYOM (Build Your Own Model)
