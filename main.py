@@ -3,13 +3,13 @@ import processor
 
 def print_trace(file, ts):
 	trace_string = ""
-	for tweet_id, correct_lang, guessed_lang, score in ts:
+	for tweet_id, correct_language, likely_language, score in ts:
 		score_antilog = 2**float(score)
-		if correct_lang == guessed_lang:
+		if correct_language == likely_language:
 			label = 'correct'
 		else:
 			label = 'wrong'
-		trace_string += ''.join([str(tweet_id), '  ', str(guessed_lang), '  ', str(score_antilog), '  ', str(correct_lang), '  ', str(label), '\n'])
+		trace_string += ''.join([str(tweet_id), '  ', str(likely_language), '  ', str(score_antilog), '  ', str(correct_language), '  ', str(label), '\n'])
 
 	with open(file, "w", encoding="utf-8") as file:
 		file.write(trace_string)
@@ -57,10 +57,10 @@ def main():
 	result_tuple = []
 	for test_tuple in predicted_result:
 		tweet_id = test_tuple[2]
-		correct_lang = test_tuple[1]
-		guessed_lang = predicted_result[test_tuple][0][0]
+		correct_language = test_tuple[1]
+		likely_language = predicted_result[test_tuple][0][0]
 		score = predicted_result[test_tuple][0][1] 
-		result_tuple.append((tweet_id, correct_lang, guessed_lang, score))
+		result_tuple.append((tweet_id, correct_language, likely_language, score))
 
 	metrics_dictionary = processor.build_metrics_dictionary(result_tuple)
 	trace_precision, trace_recall, trace_F1, trace_macroF1_weighedF1 = processor.evaluate_metrics(metrics_dictionary)
